@@ -46,9 +46,16 @@
 
     .message {
       margin-top: 20px;
-      color: green;
       font-weight: bold;
       display: none;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
     }
 
     .wallet-box {
@@ -79,14 +86,24 @@
 
     <button onclick="showMessage()">I HAVE SENT 15 USDT</button>
 
-    <p class="message" id="confirmationMessage">
-      Thank you. You will receive your USDT at the provided wallet address within 72 hours.
-    </p>
+    <p class="message" id="errorMessage"></p>
   </div>
 
   <script>
     function showMessage() {
-      document.getElementById("confirmationMessage").style.display = "block";
+      const wallet = document.getElementById("wallet").value.trim();
+      const userId = document.getElementById("userId").value.trim();
+      const errorMessage = document.getElementById("errorMessage");
+
+      if (!wallet || !userId) {
+        errorMessage.style.display = "block";
+        errorMessage.className = "message error";
+        errorMessage.innerText = "Please fill in all required information";
+      } else {
+        errorMessage.style.display = "block";
+        errorMessage.className = "message success";
+        errorMessage.innerText = "Thank you. You will receive your USDT at the provided wallet address within 72 hours.";
+      }
     }
   </script>
 
